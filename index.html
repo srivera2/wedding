@@ -1,11 +1,50 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>We're Getting Married!</title>
-  </head>
-  <body>
-    <h1>Ava & Sam</h1>
-    <p>June 12, 2026</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ava & Sam — We're getting married!</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-hero">
+    <div class="hero-inner">
+      <h1>Ava & Sam</h1>
+      <p>June 12, 2026 • Fox Hollow Farm</p>
+      <a class="btn" href="#rsvp">RSVP</a>
+    </div>
+  </header>
+  <main class="container">
+    <section id="details">
+      <h2>Details</h2>
+      <p>Ceremony at 4pm. Reception afterwards. Dress: garden casual.</p>
+    </section>
+
+    <section id="rsvp">
+      <h2>RSVP</h2>
+      <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <label>Your name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="_replyto" required></label>
+        <label>Will you attend?
+          <select name="attendance" required>
+            <option value="">Select…</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="maybe">Maybe</option>
+          </select>
+        </label>
+        <label>Number of guests<input type="number" name="guests" min="1" max="10" value="1" required></label>
+        <label>Notes<textarea name="notes" rows="3"></textarea></label>
+        <button class="btn" type="submit">Send RSVP</button>
+      </form>
+      <div id="rsvp-result" aria-live="polite"></div>
+    </section>
+
+    <footer>
+      <p>Questions? Email <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
