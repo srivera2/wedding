@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ava & Sam — Wedding</title>
 
-  <!-- Google Fonts example -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
-      <div class="brand">Ava & Sam</div>
+      <div class="brand">Amy & Sam</div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="#about">About</a></li>
@@ -26,34 +26,42 @@
 
     <div class="hero container">
       <div class="hero-inner">
-        <h1>Amy & Sam</h1>
-        <p class="lead">June 12, 2026 • Seven Paths Manor</p>
+        <p class="hero-date">June 12, 2026</p>
+        <h1 class="hero-names"><span class="script">Amy</span> <span class="ampersand">&</span> <span class="script">Sam</span></h1>
+        <p class="hero-venue">Seven Paths Manor</p>
+        <div class="divider"></div>
         <a class="btn" href="#rsvp">RSVP</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="about" class="panel container">
-      <h2>About Us</h2>
-      <p>Short paragraph about the couple & the day. Keep it warm and short.</p>
+    <section id="about" class="panel">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>Short paragraph about the couple & the day. Keep it warm and short.</p>
+      </div>
     </section>
 
-    <section id="schedule" class="panel alt container">
-      <h2>Schedule</h2>
-      <ul class="timeline">
-        <li><strong>3:00pm</strong> — Guest arrival / welcome drinks</li>
-        <li><strong>4:00pm</strong> — Ceremony</li>
-        <li><strong>5:30pm</strong> — Reception</li>
-      </ul>
+    <section id="schedule" class="panel alt">
+      <div class="container">
+        <h2>Schedule</h2>
+        <ul class="timeline">
+          <li><strong>3:00pm</strong> — Guest arrival / welcome drinks</li>
+          <li><strong>4:00pm</strong> — Ceremony</li>
+          <li><strong>5:30pm</strong> — Reception</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="travel" class="panel container">
-      <h2>Travel & Stay</h2>
-      <p>Hotel block details, parking, and shuttle information. Add links to map apps.</p>
+    <section id="travel" class="panel sage">
+      <div class="container">
+        <h2>Travel & Stay</h2>
+        <p>Hotel block details, parking, and shuttle information. Add links to map apps.</p>
+      </div>
     </section>
 
-    <section id="gallery" class="panel alt">
+    <section id="gallery" class="panel">
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery">
@@ -64,33 +72,38 @@
       </div>
     </section>
 
-    <section id="rsvp" class="panel container">
-      <h2>RSVP</h2>
-      <form id="rsvp-form" action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" class="rsvp-form">
-        <label for="name">Name</label>
-        <input id="name" name="name" required>
+    <section id="rsvp" class="panel alt">
+      <div class="container">
+        <h2>RSVP</h2>
+        <form id="rsvp-form" action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" class="rsvp-form">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
 
-        <label for="attendance">Attending?</label>
-        <select id="attendance" name="attendance" required>
-          <option value="">Choose…</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
+          <label for="attendance">Attending?</label>
+          <select id="attendance" name="attendance" required>
+            <option value="">Choose…</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
 
-        <label for="guests">Guests (including you)</label>
-        <input id="guests" name="guests" type="number" min="1" max="10" value="1">
+          <label for="guests">Guests (including you)</label>
+          <input id="guests" name="guests" type="number" min="1" max="10" value="1">
 
-        <label for="notes">Notes / dietary needs</label>
-        <textarea id="notes" name="notes" rows="3"></textarea>
+          <label for="notes">Notes / dietary needs</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
 
-        <button class="btn" type="submit">Send RSVP</button>
-        <div id="rsvp-result" aria-live="polite"></div>
-      </form>
+          <button class="btn" type="submit">Send RSVP</button>
+          <div id="rsvp-result" aria-live="polite"></div>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer container">
-    <p>Questions? <a href="mailto:hello@example.com">hello@example.com</a></p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Questions? Contact us at <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <p style="margin-top:1rem;font-size:0.85rem;opacity:0.7">✽ Amy & Sam ✽ June 12, 2026 ✽</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
