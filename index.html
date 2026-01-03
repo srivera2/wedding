@@ -3,47 +3,93 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amy & Sam — We're getting married hoe!</title>
+  <title>Ava & Sam — Wedding</title>
+
+  <!-- Google Fonts example -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="site-hero">
-    <div class="hero-inner">
-      <h1>Amy & Sam</h1>
-      <p>June 12, 2026 • Seven Paths Manor</p>
-      <a class="btn" href="#rsvp">RSVP</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <div class="brand">Ava & Sam</div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#travel">Travel</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero container">
+      <div class="hero-inner">
+        <h1>Ava & Sam</h1>
+        <p class="lead">June 12, 2026 • Fox Hollow Farm</p>
+        <a class="btn" href="#rsvp">RSVP</a>
+      </div>
     </div>
   </header>
-  <main class="container">
-    <section id="details">
-      <h2>Details</h2>
-      <p>Ceremony at 4pm. Reception afterwards. Dress: Look Lit.</p>
+
+  <main>
+    <section id="about" class="panel container">
+      <h2>About Us</h2>
+      <p>Short paragraph about the couple & the day. Keep it warm and short.</p>
     </section>
 
-    <section id="rsvp">
+    <section id="schedule" class="panel alt container">
+      <h2>Schedule</h2>
+      <ul class="timeline">
+        <li><strong>3:00pm</strong> — Guest arrival / welcome drinks</li>
+        <li><strong>4:00pm</strong> — Ceremony</li>
+        <li><strong>5:30pm</strong> — Reception</li>
+      </ul>
+    </section>
+
+    <section id="travel" class="panel container">
+      <h2>Travel & Stay</h2>
+      <p>Hotel block details, parking, and shuttle information. Add links to map apps.</p>
+    </section>
+
+    <section id="gallery" class="panel alt gallery-wrap">
+      <h2>Gallery</h2>
+      <div class="gallery container">
+        <img src="images/photo1.jpg" alt="Couple portrait" loading="lazy">
+        <img src="images/photo2.jpg" alt="Venue" loading="lazy">
+        <img src="images/photo3.jpg" alt="Invitation detail" loading="lazy">
+      </div>
+    </section>
+
+    <section id="rsvp" class="panel container">
       <h2>RSVP</h2>
-      <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
-        <label>Your name<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="_replyto" required></label>
-        <label>Will you attend?
-          <select name="attendance" required>
-            <option value="">Select…</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="maybe">Maybe</option>
-          </select>
-        </label>
-        <label>Number of guests<input type="number" name="guests" min="1" max="10" value="1" required></label>
-        <label>Notes<textarea name="notes" rows="3"></textarea></label>
-        <button class="btn" type="submit">Send RSVP</button>
-      </form>
-      <div id="rsvp-result" aria-live="polite"></div>
-    </section>
+      <form id="rsvp-form" action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" class="rsvp-form">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
 
-    <footer>
-      <p>Questions? Email <a href="mailto:hello@example.com">hello@example.com</a></p>
-    </footer>
+        <label for="attendance">Attending?</label>
+        <select id="attendance" name="attendance" required>
+          <option value="">Choose…</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="guests">Guests (including you)</label>
+        <input id="guests" name="guests" type="number" min="1" max="10" value="1">
+
+        <label for="notes">Notes / dietary needs</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+
+        <button class="btn" type="submit">Send RSVP</button>
+        <div id="rsvp-result" aria-live="polite"></div>
+      </form>
+    </section>
   </main>
+
+  <footer class="site-footer container">
+    <p>Questions? <a href="mailto:hello@example.com">hello@example.com</a></p>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
