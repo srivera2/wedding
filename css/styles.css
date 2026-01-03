@@ -38,50 +38,58 @@ body{font-family:var(--body);margin:0;color:var(--accent);line-height:1.5}
 .nav-toggle{display:none}
 
 /* Hero */
-.hero{padding:4rem 0;text-align:center;background:var(--cream)}
+.hero{
+  min-height:25vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:var(--cream);
+  padding:2rem 0;
+}
 .hero-inner{max-width:800px;margin:0 auto}
 .hero-date{
   font-family:var(--body);
-  font-size:0.9rem;
+  font-size:0.75rem;
   letter-spacing:0.15em;
   text-transform:uppercase;
   color:var(--muted);
-  margin:0 0 1.5rem 0;
+  margin:0 0 0.75rem 0;
   font-weight:400;
 }
 .hero-names{
   font-family:var(--heading);
-  font-size:4rem;
-  margin:0 0 1rem 0;
+  font-size:2.5rem;
+  margin:0 0 0.5rem 0;
   line-height:1.2;
   color:var(--dark-sage);
 }
 .script{
   font-family:var(--script);
   font-weight:400;
-  font-size:5rem;
+  font-size:3rem;
   color:var(--sage);
 }
 .ampersand{
   font-family:var(--heading);
-  font-size:3rem;
+  font-size:2rem;
   color:var(--gold);
   display:inline-block;
   margin:0 0.5rem;
 }
 .hero-venue{
   font-family:var(--body);
-  font-size:1.1rem;
+  font-size:0.95rem;
   color:var(--muted);
-  margin:0 0 2rem 0;
+  margin:0 0 1rem 0;
   font-weight:300;
   letter-spacing:0.05em;
 }
 .divider{
-  width:150px;
+  width:100px;
   height:1px;
   background:linear-gradient(to right, transparent, var(--gold), transparent);
-  margin:0 auto 2rem auto;
+  margin:0 auto 1rem auto;
   position:relative;
 }
 .divider::before{
@@ -246,11 +254,11 @@ input:focus,select:focus,textarea:focus{
 /* Responsive */
 @media (max-width:900px){
   .gallery{grid-template-columns:repeat(2,1fr)}
-  .hero{padding:3rem 0}
-  .hero-names{font-size:2.5rem}
-  .script{font-size:3rem}
-  .ampersand{font-size:2rem}
-  .hero-date,.hero-venue{font-size:1rem}
+  .hero{min-height:30vh;padding:2rem 0}
+  .hero-names{font-size:2rem}
+  .script{font-size:2.5rem}
+  .ampersand{font-size:1.5rem}
+  .hero-date,.hero-venue{font-size:0.85rem}
   .panel{padding:3rem 0}
   h2{font-size:1.7rem}
 
@@ -306,17 +314,19 @@ input:focus,select:focus,textarea:focus{
   }
 }
 @media (max-width:768px){
-  .hero{padding:2.5rem 0}
-  .hero-names{font-size:2rem}
-  .script{font-size:2.5rem}
-  .ampersand{font-size:1.5rem}
+  .hero{min-height:35vh}
+  .hero-names{font-size:1.8rem}
+  .script{font-size:2.2rem}
+  .ampersand{font-size:1.3rem}
 }
 
 @media (max-width:520px){
   .gallery{grid-template-columns:1fr}
   body{font-size:1rem}
-  .hero-names{font-size:1.8rem}
-  .script{font-size:2.2rem}
+  .hero{min-height:40vh}
+  .hero-names{font-size:1.5rem}
+  .script{font-size:1.8rem}
+  .ampersand{font-size:1rem}
   .panel{padding:2.5rem 0}
   h2{font-size:1.5rem}
 }
