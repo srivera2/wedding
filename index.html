@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Amy & Sam — Wedding</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
@@ -28,10 +32,12 @@
   <section class="hero">
     <div class="hero-inner container">
       <p class="hero-date">May 28th, 2027</p>
-      <h1 class="hero-names"><span class="script">Amy</span> <span class="ampersand">&</span> <span class="script">Sam</span></h1>
+      <h1 class="hero-names"><span class="script">Amy</span> <span class="ampersand">&</span> <span
+          class="script">Sam</span></h1>
       <p class="hero-venue">Seven Paths Manor</p>
       <p class="venue-details">
-        <a href="https://maps.apple.com/place?place-id=IF8AA9E75325E19BC&address=8446+Seven+Paths+Rd%2C+Spring+Hope%2C+NC++27882%2C+United+States&coordinate=35.9581601%2C-78.1347597&name=Seven+Paths+Manor&_provider=9902" target="_blank" rel="noopener" class="map-link">📍 View Map</a>
+        <a href="https://maps.apple.com/place?place-id=IF8AA9E75325E19BC&address=8446+Seven+Paths+Rd%2C+Spring+Hope%2C+NC++27882%2C+United+States&coordinate=35.9581601%2C-78.1347597&name=Seven+Paths+Manor&_provider=9902"
+          target="_blank" rel="noopener" class="map-link">📍 View Map</a>
         <span class="venue-divider">•</span>
         <a href="tel:+15555551234" class="phone-link">📞 (555) 555-1234</a>
       </p>
@@ -41,78 +47,99 @@
   </section>
 
   <main>
-    <section id="about" class="panel">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>Short paragraph about the couple & the day. Keep it warm and short.</p>
+    <!-- About / Story Section -->
+    <section id="about" class="split-section fade-in-up">
+      <div class="image-block">
+        <img
+          src="approved_photos/website photos/green-hills-county-park-engagement-north-carolina-mountain-meandering-photography-54.jpg"
+          alt="Engagement Photo" loading="lazy">
+      </div>
+      <div class="text-block bg-olive">
+        <span class="section-subtitle">The Couple</span>
+        <h2 class="section-title">Our Story</h2>
+        <p>We met five years ago at a coffee shop in downtown Raleigh. Since then, we've traveled to 12 countries,
+          adopted two golden retrievers, and built a life we love. We can't wait to celebrate our next chapter with you.
+        </p>
+        <div class="divider"></div>
       </div>
     </section>
 
-    <section id="schedule" class="panel alt">
+    <!-- Schedule Section (Centered, Cream) -->
+    <section id="schedule" class="panel alt fade-in-up">
       <div class="container">
-        <h2>Schedule</h2>
+        <span class="section-subtitle" style="color:var(--primary); text-align:center;">The Day</span>
+        <h2>Itinerary</h2>
         <ul class="timeline">
-          <li><strong>3:00pm</strong> — Guest arrival / welcome drinks</li>
-          <li><strong>4:00pm</strong> — Ceremony</li>
-          <li><strong>5:30pm</strong> — Reception</li>
+          <li class="fade-in-up delay-1"><strong>3:00 PM</strong><br>Guest Arrival & Welcome Drinks</li>
+          <li class="fade-in-up delay-2"><strong>4:00 PM</strong><br>Ceremony in the Garden</li>
+          <li class="fade-in-up delay-3"><strong>5:30 PM</strong><br>Dinner & Reception</li>
         </ul>
       </div>
     </section>
 
-    <section id="travel" class="panel sage">
-      <div class="container">
-        <h2>Travel & Stay</h2>
-        <p class="section-intro">We've reserved room blocks at the following hotels for your convenience.</p>
+    <!-- Full Width Parallax-like Image -->
+    <div class="photo-splash wide fade-in-up">
+      <img src="approved_photos/website photos/IMG_8270.JPG" alt="Couple Walking" loading="lazy">
+    </div>
 
+    <!-- Travel / Venue Split Section -->
+    <section id="travel" class="split-section fade-in-up">
+      <div class="text-block bg-burgundy">
+        <span class="section-subtitle">The Venue</span>
+        <h2 class="section-title">Seven Paths Manor</h2>
+        <p>Nestled in the rolling hills of Spring Hope, NC. We've arranged transportation from the main hotel blocks.
+        </p>
+        <br>
+        <a href="https://maps.apple.com" target="_blank" class="btn" style="background:#fff; color:var(--accent);">Get
+          Directions</a>
+      </div>
+      <div class="image-block">
+        <img src="approved_photos/website photos/seven_path.PNG" alt="Venue View" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Hotels Section (Clean, White) -->
+    <section class="panel fade-in-up" style="padding-top:3rem;">
+      <div class="container">
+        <h2>Accommodations</h2>
         <div class="hotel-list">
           <div class="hotel-card">
             <h3>The Grand Hotel</h3>
-            <p class="hotel-description">Our preferred hotel, just 5 minutes from the venue.</p>
-            <p class="hotel-info">
-              <a href="https://maps.google.com/?q=The+Grand+Hotel" target="_blank" rel="noopener" class="map-link">📍 View Map</a>
-              <span class="venue-divider">•</span>
-              <a href="tel:+15555556789" class="phone-link">📞 (555) 555-6789</a>
-            </p>
-            <p class="hotel-code">Mention "Rivera-Smith Wedding" for group rate</p>
+            <p class="hotel-description">5 mins away • Shuttle provided</p>
+            <a href="#" class="btn" style="padding:0.5rem 1rem; font-size:0.8rem;">Book Room</a>
           </div>
-
           <div class="hotel-card">
             <h3>Riverside Inn</h3>
-            <p class="hotel-description">Boutique hotel with scenic views, 10 minutes from venue.</p>
-            <p class="hotel-info">
-              <a href="https://maps.google.com/?q=Riverside+Inn" target="_blank" rel="noopener" class="map-link">📍 View Map</a>
-              <span class="venue-divider">•</span>
-              <a href="tel:+15555554321" class="phone-link">📞 (555) 555-4321</a>
-            </p>
-            <p class="hotel-code">Use code: AMYSAM2027</p>
+            <p class="hotel-description">10 mins away • River views</p>
+            <a href="#" class="btn" style="padding:0.5rem 1rem; font-size:0.8rem;">Book Room</a>
           </div>
-        </div>
-
-        <div class="travel-notes">
-          <p><strong>Parking:</strong> Free parking available at Seven Paths Manor</p>
-          <p><strong>Airport:</strong> 30 minutes from Metropolitan Airport (MET)</p>
         </div>
       </div>
     </section>
 
-    <!-- Full-width image section -->
-    <section class="full-width-image">
-      <img src="images/VERT_IMG_0069.jpg" alt="Venue landscape view" loading="lazy">
-    </section>
-
-    <section id="gallery" class="panel">
+    <!-- Gallery (Seamless) -->
+    <section id="gallery" class="panel alt fade-in-up">
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery">
-          <img src="images/photo1.jpg" alt="Couple portrait" loading="lazy">
-          <img src="images/photo2.jpg" alt="Venue" loading="lazy">
-          <img src="images/photo3.jpg" alt="Invitation detail" loading="lazy">
+          <img src="approved_photos/website photos/IMG_8254.JPG" alt="Couple portrait" loading="lazy">
+          <img
+            src="approved_photos/website photos/wral-azalea-garden-engagement-north-carolina-mountain-meandering-photography-118.jpg"
+            alt="Venue" loading="lazy">
+          <img src="approved_photos/website photos/IMG_8273.JPG" alt="Details" loading="lazy">
+          <img src="approved_photos/website photos/IMG_8264.JPG" alt="Happy Moment" loading="lazy">
+          <img
+            src="approved_photos/website photos/green-hills-county-park-engagement-north-carolina-mountain-meandering-photography-91.jpg"
+            alt="Walking" loading="lazy">
+          <img src="approved_photos/website photos/IMG_8276.JPG" alt="Smile" loading="lazy">
         </div>
       </div>
     </section>
 
-    <section id="rsvp" class="panel alt">
+    <!-- RSVP Section -->
+    <section id="rsvp" class="panel fade-in-up" style="background:var(--light);">
       <div class="container">
+        <span class="section-subtitle" style="color:var(--primary); text-align:center;">Join Us</span>
         <h2>RSVP</h2>
         <form id="rsvp-form" class="rsvp-form">
           <label for="name">Name</label>
@@ -121,8 +148,8 @@
           <label for="attendance">Attending?</label>
           <select id="attendance" name="attendance" required>
             <option value="">Choose…</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value="yes">Joyfully Accept</option>
+            <option value="no">Regretfully Decline</option>
           </select>
 
           <label for="guests">Guests (including you)</label>
@@ -140,11 +167,12 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Questions? Contact us at <a href="mailto:hello@example.com">hello@example.com</a></p>
-      <p style="margin-top:1rem;font-size:0.85rem;opacity:0.7">✽ Amy & Sam ✽ June 12, 2026 ✽</p>
+      <p>Questions? Contact us at <a href="mailto:amy.zhao871@gmail.com">amy{dot}zhao871@gmail.com</a></p>
+      <p style="margin-top:1rem;font-size:0.85rem;opacity:0.7">✽ Website made for Amy by Sam with love ❤️✽</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

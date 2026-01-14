@@ -1,73 +1,87 @@
-// Mobile navigation toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.querySelector('.nav-list');
+// Force scroll to top on load to ensure animations are seen
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
-if (navToggle && navList) {
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+
   navToggle.addEventListener('click', () => {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', !isExpanded);
     navList.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
-  const navLinks = navList.querySelectorAll('a');
-  navLinks.forEach(link => {
+  // Close nav when clicking a link
+  navList.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
       navList.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
-}
 
-// RSVP Form Submission to Google Sheets
-const rsvpForm = document.getElementById('rsvp-form');
-const rsvpResult = document.getElementById('rsvp-result');
+  // RSVP Form Handling (Mockup)
+  const rsvpForm = document.getElementById('rsvp-form');
+  const rsvpResult = document.getElementById('rsvp-result');
 
-if (rsvpForm) {
-  rsvpForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Simulate form submission
+      const button = rsvpForm.querySelector('button');
+      const originalText = button.innerText;
 
-    // Get form data
-    const formData = {
-      name: document.getElementById('name').value,
-      attendance: document.getElementById('attendance').value,
-      guests: document.getElementById('guests').value,
-      notes: document.getElementById('notes').value
-    };
+      button.disabled = true;
+      button.innerText = 'Sending...';
 
-    // Disable button and show loading state
-    const submitButton = rsvpForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
+      setTimeout(() => {
+        rsvpForm.reset();
+        button.disabled = false;
+        button.innerText = originalText;
+        rsvpResult.innerHTML = '<p style="color:var(--primary); margin-top:1rem; font-weight:bold;">Thank you! We have received your RSVP.</p>';
 
-    try {
-      // Send data to Google Sheets
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzJOabbiazb1h9CrPpr5o1kRpW8AQemPwCR_qIWsK1DIbZmel50qWLEFMMHYXlFNnYgbw/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          rsvpResult.innerHTML = '';
+        }, 5000);
+      }, 1500);
+    });
+  }
 
-      // Show success message
-      rsvpResult.innerHTML = '<p style="color: var(--sage); font-weight: 600; margin-top: 1rem;">✓ Thank you for your RSVP!</p>';
-      rsvpResult.style.textAlign = 'center';
+  // Scroll Animations using IntersectionObserver
+  const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .panel h2, .photo-splash img');
 
-      // Reset form
-      rsvpForm.reset();
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-    } catch (error) {
-      // Show error message
-      rsvpResult.innerHTML = '<p style="color: #c53030; font-weight: 600; margin-top: 1rem;">Sorry, there was an error. Please try again.</p>';
-      rsvpResult.style.textAlign = 'center';
-      console.error('Error:', error);
-    } finally {
-      // Re-enable button
-      submitButton.disabled = false;
-      submitButton.textContent = originalButtonText;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.tagName === 'IMG' && entry.target.parentElement.classList.contains('photo-splash')) {
+          entry.target.parentElement.classList.add('visible');
+        }
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach(el => {
+    observer.observe(el);
+  });
+
+  // Parallax / Smooth Scroll for Hero
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    if (scroll < 800) {
+      hero.style.backgroundPositionY = `${scroll * 0.5}px`;
     }
   });
-}
+
+});
